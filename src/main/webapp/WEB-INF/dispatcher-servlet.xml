@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	   xmlns:aop="http://www.springframework.org/schema/aop"
+	   xmlns:context="http://www.springframework.org/schema/context"
+	   xmlns:mvc="http://www.springframework.org/schema/mvc"
+	   xmlns:util="http://www.springframework.org/schema/util"
+	   xsi:schemaLocation="http://www.springframework.org/schema/beans
+	   					   http://www.springframework.org/schema/beans/spring-beans-4.3.xsd
+	   					   http://www.springframework.org/schema/aop
+           				   http://www.springframework.org/schema/aop/spring-aop-4.3.xsd
+	   					   http://www.springframework.org/schema/context
+	   					   http://www.springframework.org/schema/context/spring-context-4.3.xsd
+	   					   http://www.springframework.org/schema/mvc
+	   					   http://www.springframework.org/schema/mvc/spring-mvc-4.3.xsd
+	   					   http://www.springframework.org/schema/util
+	   					   http://www.springframework.org/schema/util/spring-util-4.3.xsd">
+	<!-- 
+	<bean name="/ch03a/product_input" class="app03a.controller.InputProductController"></bean>
+	
+	<bean name="/ch03a/product_save" class="app03a.controller.SaveProductController"></bean>
+	
+	<context:component-scan base-package="app04a.controller"></context:component-scan>
+	<context:component-scan base-package="app04b.controller"></context:component-scan>
+	
+	<context:component-scan base-package="app05a.controller"></context:component-scan>
+	
+	<context:component-scan base-package="app06a.controller"></context:component-scan>
+	
+	<context:component-scan base-package="app07a.controller"></context:component-scan>
+	
+	<context:component-scan base-package="app07b.controller"></context:component-scan>
+	
+	<context:component-scan base-package="app08a.controller"></context:component-scan>
+	
+	<context:component-scan base-package="app04b.service"></context:component-scan>
+	
+	<context:component-scan base-package="app05a.srevice"></context:component-scan>
+	<context:component-scan base-package="app11b.controller"></context:component-scan>
+	<context:component-scan base-package="app15.session"></context:component-scan> -->
+	
+	<context:component-scan base-package="com.hkbea.controller"></context:component-scan>
+	
+	<!-- <mvc:annotation-driven conversion-service="conversionService1"></mvc:annotation-driven> -->
+	<mvc:annotation-driven></mvc:annotation-driven>
+	<mvc:default-servlet-handler/>
+	<mvc:resources location="/resources/" mapping="/resources/**"></mvc:resources>
+	
+	<bean id="viewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+		<property name="viewClass" value="org.springframework.web.servlet.view.JstlView"/>
+		<property name="prefix" value="/WEB-INF/jsp/"/>
+	   	<property name="suffix" value=".jsp"/>
+	</bean>
+	
+	<!-- ch06a -->
+	<!-- <bean id="conversionService" class="org.springframework.context.support.ConversionServiceFactoryBean">
+		<property name="converters">
+			<list>
+				<bean class="app06a.converter.StringToDateConverter">
+					<constructor-arg name="datePattern" value="MM-dd-yyyy"></constructor-arg>
+				</bean>
+			</list>
+		</property>
+	</bean>
+	
+	<bean id="conversionService1" class="org.springframework.format.support.FormattingConversionServiceFactoryBean">
+        <property name="formatters">
+            <set>
+				<bean class="app06b.formatter.DateFormatter">
+					<constructor-arg name="datePattern" value="MM-dd-yyyy"></constructor-arg>
+				</bean>
+            </set>
+        </property>
+    </bean> -->
+    
+    <!-- ch10 i18n message -->
+    <bean id="messageSource" class="org.springframework.context.support.ReloadableResourceBundleMessageSource">
+	   	<property name="basename" value="/WEB-INF/messages"/>
+	</bean>
+	
+	<!-- ch10 i18n local -->
+	<bean id="localeResolver" class="org.springframework.web.servlet.i18n.AcceptHeaderLocaleResolver"></bean>
+	
+	<!-- ch11 Servelt 3.x file upload -->
+	<bean id="multipartResolver" class="org.springframework.web.multipart.support.StandardServletMultipartResolver"></bean>
+	
+	<!-- <mvc:interceptors>
+		<mvc:interceptor>
+			<mvc:mapping path="/*"/>
+			<bean class="org.springframework.web.servlet.i18n.LocaleChangeInterceptor"></bean>
+		</mvc:interceptor>
+	</mvc:interceptors> -->
+</beans>
