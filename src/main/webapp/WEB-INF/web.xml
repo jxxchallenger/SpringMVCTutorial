@@ -21,14 +21,22 @@
   	<param-name>contextConfigLocation</param-name>
   	<param-value>classpath:com/hkbea/spring/ApplicationContext-*.xml</param-value>
   </context-param>
-  
+  <context-param>
+    <param-name>requiredProperties</param-name>
+    <param-value>haha</param-value>
+  </context-param>
   <listener>
   	<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
   </listener>
   
   <servlet>
   	<servlet-name>dispatcher</servlet-name>
-  	<servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+  	<!-- <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class> -->
+    <servlet-class>io.jxxchallener.web.servlet.CustomDispatcherServlet</servlet-class>
+    <init-param>
+        <param-name>requiredProperty</param-name>
+        <param-value>haha</param-value>
+    </init-param>
   	<async-supported>true</async-supported>
   	<multipart-config>
   		<max-file-size>102400000</max-file-size>
