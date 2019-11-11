@@ -16,7 +16,7 @@
         <hibernate.version>5.4.6.Final</hibernate.version>
         <hibernate.validator.version>6.0.17.Final</hibernate.validator.version>
         <log4j2.version>2.12.1</log4j2.version>
-        <mariadb.version>2.2.3</mariadb.version>
+        <mariadb.version>2.5.1</mariadb.version>
         <fasterxml.jackson.version>2.10.0</fasterxml.jackson.version>
 
 
@@ -159,6 +159,17 @@
             <version>${mariadb.version}</version>
             <scope>runtime</scope>
         </dependency>
+        <!-- <dependency>
+            <groupId>com.h2database</groupId>
+            <artifactId>h2</artifactId>
+            <version>1.4.200</version>
+        </dependency> -->
+
+        <!-- <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+            <version>8.0.18</version>
+        </dependency> -->
 
         <dependency>
             <groupId>com.fasterxml.jackson.core</groupId>
