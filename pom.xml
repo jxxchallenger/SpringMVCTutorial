@@ -14,7 +14,7 @@
         <spring.version>5.1.7.RELEASE</spring.version>
         <jstl.version>1.2.5</jstl.version>
         <hibernate.version>5.4.6.Final</hibernate.version>
-        <hibernate.validator.version>6.0.17.Final</hibernate.validator.version>
+        <hibernate.validator.version>6.1.0.Final</hibernate.validator.version>
         <log4j2.version>2.12.1</log4j2.version>
         <mariadb.version>2.5.1</mariadb.version>
         <fasterxml.jackson.version>2.10.1</fasterxml.jackson.version>
@@ -44,6 +44,13 @@
                 <groupId>com.fasterxml.jackson</groupId>
                 <artifactId>jackson-bom</artifactId>
                 <version>${fasterxml.jackson.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+            <dependency>
+                <groupId>org.hibernate.validator</groupId>
+                <artifactId>hibernate-validator-parent</artifactId>
+                <version>${hibernate.validator.version}</version>
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
@@ -135,12 +142,10 @@
         <dependency>
             <groupId>org.hibernate.validator</groupId>
             <artifactId>hibernate-validator</artifactId>
-            <version>${hibernate.validator.version}</version>
         </dependency>
         <dependency>
             <groupId>org.hibernate.validator</groupId>
             <artifactId>hibernate-validator-annotation-processor</artifactId>
-            <version>${hibernate.validator.version}</version>
         </dependency>
         <dependency>
             <groupId>org.glassfish</groupId>
