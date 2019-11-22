@@ -1,8 +1,9 @@
 package test.beanwrapper;
 
-import static org.junit.Assert.assertEquals;
 
-import org.junit.Test;
+import static org.testng.Assert.assertEquals;
+
+import org.junit.jupiter.api.Test;
 import org.springframework.beans.BeanWrapper;
 import org.springframework.beans.PropertyAccessorFactory;
 

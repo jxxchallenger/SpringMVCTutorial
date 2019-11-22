@@ -3,9 +3,9 @@ package test.jdbc;
 import java.util.List;
 import java.util.Map;
 
-import org.junit.After;
-import org.junit.Before;
-import org.junit.Test;
+import org.junit.jupiter.api.AfterAll;
+import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.Test;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
@@ -18,7 +18,7 @@ public class TestJdbc{
 	private CityService cityService;
 
 	@SuppressWarnings("resource")
-	@Before
+	@BeforeAll
 	public void setUp() throws Exception {
 		ApplicationContext context = new ClassPathXmlApplicationContext("test/jdbc/ApplicationContext-JDBC.xml");
 		this.cityService = context.getBean(CityService.class);
@@ -42,7 +42,7 @@ public class TestJdbc{
 		System.out.println(cities2.size());
 	}
 
-	@After
+	@AfterAll
 	public void tearDown() throws Exception {
 		
 	}
